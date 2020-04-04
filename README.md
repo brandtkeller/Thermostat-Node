@@ -1,10 +1,10 @@
-# Java Sample Project 
+# Thermostat Main Display Unit
 
-RESTful java server built with maven with ability to be containterized. 
+Main backend server for the Open Thermostat integration system
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a .jar package that can be transferred from a Development machine or built on a Raspberry Pi. 
 
 ### Prerequisites
 
@@ -35,10 +35,10 @@ mvn package
 Run
 
 ```
-java -jar ./target/springbootdemo-0.0.1.jar
+java -jar ./target/thermo-mdu-0.0.1.jar
 ```
 
-The server will now be running on port 8080 with an included mock dataset.
+The server will now be running on port 8080.
 See below for running command line manual testing.
 
 ## Manual testing
@@ -47,35 +47,6 @@ Testing the server via command line
 
 ### REST test examples
 
-GET all employees in the dataset
-
-```
-curl -v -X GET http://localhost:8080/employees/
-```
-
-GET a single employee from the dataset
-
-```
-curl -v -X GET http://localhost:8080/employees/2
-```
-
-POST (add) a new employee to the dataset
-
-```
-curl -v -d '{"firstName":"John", "lastName":"Doe", "email":"johndoe@test.com"}' -H "Content-Type: application/json" -X POST http://localhost:8080/employees/
-```
-
-PUT (Modify) an employee in the dataset)
-
-```
-curl -v -d '{"firstName":"Jane", "lastName":"Doe", "email":"janedoe@test.com""}' -H "Content-Type: application/json" -X POST http://localhost:8080/employees/2
-```
-
-DELETE (remove) an employee from the dataset
-
-```
-curl -v -X DELETE http://localhost:8080/employees/2
-```
 
 ## Deployment
 
