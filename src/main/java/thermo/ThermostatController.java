@@ -21,11 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path ="/thermostats")
 public class ThermostatController {
-    @Autowired
+    Thermostat thermo = Thermoshare.getInstance();
+
 
     @GetMapping(path="", produces = "application/json")
     public ResponseEntity <String> getThermostats() {
-        return new ResponseEntity<String>("returning the thermostat objects here", HttpStatus.OK);
+        return new ResponseEntity<String>("returning the thermostat objects here" + thermo.getCurrentTemp(), HttpStatus.OK);
     }
 
     // @GetMapping(path="/{id}", produces = "application/json")

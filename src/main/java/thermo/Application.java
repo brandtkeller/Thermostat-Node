@@ -9,11 +9,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
     public static void main(String[] args) {
-        // Start the REST api thread
+        Thermostat global = Thermoshare.getInstance();
+
         SpringApplication.run(Application.class, args);
+
         
-        for (int i = 0; i < 60; i++) {
-            System.out.println("Here is some other logic that I need to run");
+        for (int i = 0; i < 100; i++) {
+            System.out.println("Here is some other logic that I need to run, currentTemp = " + global.getCurrentTemp());
+            global.setCurrentTemp((global.getCurrentTemp() + 1));
             try {
                 TimeUnit.SECONDS.sleep(1);
             }
@@ -21,5 +24,7 @@ public class Application {
                 
             }
         }
+
+        
     }
 }
